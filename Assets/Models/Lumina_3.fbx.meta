@@ -6,15 +6,25 @@ ModelImporter:
     100000: //RootNode
     100002: polySurface86
     100004: polySurface87
+    100006: Lumina
+    100008: LuminaOrb
     400000: //RootNode
     400002: polySurface86
     400004: polySurface87
+    400006: Lumina
+    400008: LuminaOrb
     2300000: polySurface86
     2300002: polySurface87
+    2300004: Lumina
+    2300006: LuminaOrb
     3300000: polySurface86
     3300002: polySurface87
+    3300004: Lumina
+    3300006: LuminaOrb
     4300000: polySurface86
     4300002: polySurface87
+    4300004: LuminaOrb
+    4300006: Lumina
     9500000: //RootNode
   materials:
     importMaterials: 0
