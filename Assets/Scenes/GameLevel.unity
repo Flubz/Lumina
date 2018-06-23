@@ -6648,14 +6648,6 @@ Prefab:
       propertyPath: m_Name
       value: Stairs (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 4585880639480194, guid: b6b314cdc6ac48e4bbd05d2e8354383c, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4585880639480194, guid: b6b314cdc6ac48e4bbd05d2e8354383c, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b6b314cdc6ac48e4bbd05d2e8354383c, type: 2}
   m_IsPrefabParent: 0
