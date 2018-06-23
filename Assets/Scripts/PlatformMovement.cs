@@ -1,41 +1,33 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class PlatformMovement : MonoBehaviour
 {
 	[SerializeField] float _moveRadius = 2.0f;
-	[SerializeField] float _moveSpeed = 1.0f;
-	// [Tooltip ("Global axis of platform movement.")]
-	// [SerializeField] Direction _movementDirection;
-
-	Vector3 _movementAxis;
-	public float _damping = 5f;
-	Vector3[] _targetLocations = new Vector3[2];
-	bool _goingRight;
-	Vector3 _targetPos = new Vector3 ();
+	[SerializeField] float _moveDuration = 3.0f;
+	Ease _movementEase = Ease.InOutCubic;
+	Vector3 _initialPos;
 
 	void Start ()
 	{
-		_targetPos = Vector3.zero;
-		// _targetLocations[0] = (transform.position.x + _moveRadius);
-		// _targetLocations[1] = (transform.position.x + _moveRadius * -1);
+		_initialPos = transform.localPosition;
+		MoveLeft ();
 	}
 
-	void LateUpdate ()
+	void MoveLeft ()
 	{
+		Tweener t = transform.DOMoveZ (_initialPos.z + _moveRadius, _moveDuration);
+		t.SetEase (_movementEase);
+		t.OnComplete (MoveRight);
+	}
 
-		if (_goingRight && transform.position.x >= _targetLocations[0].x)
-		{
-			_targetPos = _targetLocations[0];
-		}
-		else if (transform.position.x <= _targetLocations[1].x)
-		{
-			_targetPos = _targetLocations[1];
-
-		}
-
-		transform.position = Vector3.Lerp (transform.position, _targetPos, _damping * Time.deltaTime);
+	void MoveRight ()
+	{
+		Tweener t = transform.DOMoveZ (_initialPos.z + _moveRadius * -1, _moveDuration);
+		t.SetEase (_movementEase);
+		t.OnComplete (MoveLeft);
 	}
 
 	// void OnValidate ()

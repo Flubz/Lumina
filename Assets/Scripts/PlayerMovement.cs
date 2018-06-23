@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
 			transform.RotateTowardsVector (GetRotationVector (), _rotSpeed, _rotOffset);
 			_rb.AddForce (transform.forward * _moveSpeed, ForceMode.Force);
 			if (_rb.velocity.magnitude >= _maxVelocity) _rb.velocity = _rb.velocity * _maxVelocity;
-			Debug.Log (_rb.velocity);
+			Debug.Log (_rb.velocity.magnitude);
 		}
 	}
 
