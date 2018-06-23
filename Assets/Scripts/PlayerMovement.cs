@@ -11,11 +11,15 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField] float _maxVelocity;
 	[SerializeField] float _rotSpeed;
 	[SerializeField] float _rotOffset;
+	[Space (1.0f)]
+
 	[Header ("Dash Settings")]
 	[SerializeField] Transform _orb;
 	[SerializeField] float _maxDashDistance;
 	[SerializeField] float _orbMoveSpeed;
 	[SerializeField] Ease _dashEase;
+	[SerializeField] float _dashRate = 2.0f;
+	float _timeUntilNextDash;
 
 	bool _movementLocked;
 
@@ -26,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
 
 	private void FixedUpdate ()
 	{
-		if (_movementLocked) return;
+		// if (_movementLocked) return;
 		if (GetRotationVector ().magnitude > 0.4f)
 		{
 			transform.RotateTowardsVector (GetRotationVector (), _rotSpeed, _rotOffset);
@@ -49,24 +53,31 @@ public class PlayerMovement : MonoBehaviour
 	{
 		if (Time.time > _timeUntilNextDash && _dashRate != 0)
 		{
-			if (Input.GetButtonDown ("Jump"))
+			if (Input.GetButtonDown ("Jump") && !_orb.gameObject.activeSelf)
 				LaunchOrb ();
+			else if (Input.GetButtonDown ("Jump") && _orb.gameObject.activeSelf)
+				TeleportToOrb ();
 			_timeUntilNextDash = Time.time + 1 / _dashRate;
 		}
 
-		if (Input.GetButtonUp ("Jump"))
-			TeleportToOrb ();
 	}
 
 	void LaunchOrb ()
 	{
+		Debug.Log("ASD");
 		_orb.gameObject.SetActive (true);
 		_movementLocked = true;
 		_orb.position = transform.position;
 
 		Vector3 telePos = transform.position + transform.forward * _maxDashDistance;
 
-		_orb.DOMove (telePos, _orbMoveSpeed).SetEase (_dashEase);
+		Tweener t = _orb.DOMove (telePos, _orbMoveSpeed).SetEase (_dashEase);
+		t.OnComplete (DisableGO);
+	}
+
+	void DisableGO ()
+	{
+		_orb.gameObject.SetActive (false);
 	}
 
 	void TeleportToOrb ()
