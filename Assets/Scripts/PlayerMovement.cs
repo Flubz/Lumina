@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
 
 	[SerializeField] Rigidbody _rb;
 	[SerializeField] float _moveSpeed;
+	[SerializeField] float _maxVelocity;
 	[SerializeField] float _rotSpeed;
 	[SerializeField] float _rotOffset;
 
@@ -15,7 +16,9 @@ public class PlayerMovement : MonoBehaviour
 		if (GetRotationVector ().magnitude > 0.4f)
 		{
 			transform.RotateTowardsVector (GetRotationVector (), _rotSpeed, _rotOffset);
-			_rb.AddForce(transform.forward * _moveSpeed, ForceMode.Force);
+			_rb.AddForce (transform.forward * _moveSpeed, ForceMode.Force);
+			if (_rb.velocity.magnitude >= _maxVelocity) _rb.velocity = _rb.velocity * _maxVelocity;
+			Debug.Log (_rb.velocity);
 		}
 	}
 

@@ -15,28 +15,28 @@ public class PlatformMovement : MonoBehaviour
 	bool _goingRight;
 	Vector3 _targetPos = new Vector3 ();
 
-	// void Start ()
-	// {
-	// 	// _targetPos = Vector3.zero;
-	// 	// _targetLocations[0] = (transform.position.x + _moveRadius);
-	// 	// _targetLocations[1] = (transform.position.x + _moveRadius * -1);
-	// }
+	void Start ()
+	{
+		_targetPos = Vector3.zero;
+		// _targetLocations[0] = (transform.position.x + _moveRadius);
+		// _targetLocations[1] = (transform.position.x + _moveRadius * -1);
+	}
 
-	// void LateUpdate ()
-	// {
+	void LateUpdate ()
+	{
 
-	// 	if (_goingRight && transform.position.x >= _targetLocations[0].x)
-	// 	{
-	// 		_targetPos = _targetLocations[0];
-	// 	}
-	// 	else if (transform.position.x <= _targetLocations[1].x)
-	// 	{
-	// 		_targetPos = _targetLocations[1];
+		if (_goingRight && transform.position.x >= _targetLocations[0].x)
+		{
+			_targetPos = _targetLocations[0];
+		}
+		else if (transform.position.x <= _targetLocations[1].x)
+		{
+			_targetPos = _targetLocations[1];
 
-	// 	}
+		}
 
-	// 	transform.position = Vector3.Lerp (transform.position, _targetPos, _damping * Time.deltaTime);
-	// }
+		transform.position = Vector3.Lerp (transform.position, _targetPos, _damping * Time.deltaTime);
+	}
 
 	// void OnValidate ()
 	// {

@@ -554,6 +554,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rb: {fileID: 54404898068103322}
   _moveSpeed: 16
+  _maxVelocity: 15
   _rotSpeed: 12
   _rotOffset: -45
 --- !u!114 &114456648423898722

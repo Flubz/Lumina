@@ -497,7 +497,7 @@ PlayerSettings:
   webGLUseWasm: 0
   webGLCompressionFormat: 1
   scriptingDefineSymbols:
-    13: AMPLIFY_SHADER_EDITOR
+    13: AMPLIFY_SHADER_EDITOR;ODIN_INSPECTOR
   platformArchitecture: {}
   scriptingBackend: {}
   incrementalIl2cppBuild: {}
