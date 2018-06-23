@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
 		if (GetRotationVector ().magnitude > 0.4f)
 		{
 			transform.RotateTowardsVector (GetRotationVector (), _rotSpeed, _rotOffset);
-			_rb.AddForce (transform.forward * _moveSpeed, ForceMode.Force);
+			_rb.velocity = (transform.forward * _moveSpeed * Time.fixedDeltaTime) + (_rb.velocity/5);
 			if (_rb.velocity.magnitude >= _maxVelocity) _rb.velocity = _rb.velocity * _maxVelocity;
 		}
 	}
