@@ -30,12 +30,19 @@ public class PlatformMovement : MonoBehaviour
 		t.OnComplete (MoveLeft);
 	}
 
-	void OnCollisionEnter (Collision other)
+	void OnTriggerEnter (Collider other)
 	{
-		Debug.Log ("ASD");
 		if (other.gameObject.CompareTag ("Player"))
 		{
-			_moveRadius = 0.01f * _moveRadius;
+			transform.DOTogglePause ();
+		}
+	}
+
+	void OnTriggerExit (Collider other)
+	{
+		if (other.gameObject.CompareTag ("Player"))
+		{
+			transform.DOTogglePause ();
 		}
 	}
 

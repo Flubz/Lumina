@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
 		if (GetRotationVector ().magnitude > 0.4f)
 		{
 			transform.RotateTowardsVector (GetRotationVector (), _rotSpeed, _rotOffset);
-			_rb.velocity = (transform.forward * _moveSpeed * Time.fixedDeltaTime) + (_rb.velocity/5);
+			_rb.velocity = (transform.forward * _moveSpeed * Time.fixedDeltaTime) + (_rb.velocity / 100);
 			if (_rb.velocity.magnitude >= _maxVelocity) _rb.velocity = _rb.velocity * _maxVelocity;
 		}
 	}
@@ -47,12 +47,15 @@ public class PlayerMovement : MonoBehaviour
 
 	void CheckForDash ()
 	{
-		if (Input.GetButtonDown ("Jump"))
-			LaunchOrb ();
+		if (Time.time > _timeUntilNextDash && _dashRate != 0)
+		{
+			if (Input.GetButtonDown ("Jump"))
+				LaunchOrb ();
+			_timeUntilNextDash = Time.time + 1 / _dashRate;
+		}
 
 		if (Input.GetButtonUp ("Jump"))
 			TeleportToOrb ();
-
 	}
 
 	void LaunchOrb ()
