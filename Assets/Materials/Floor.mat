@@ -72,6 +72,10 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
+<<<<<<< Updated upstream
+=======
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
 <<<<<<< HEAD
     - _Color: {r: 0.4044118, g: 0.4044118, b: 0.4044118, a: 1}
 =======
@@ -80,5 +84,14 @@ Material:
 =======
     - _Color: {r: 1, g: 1, b: 1, a: 1}
 >>>>>>> master
+<<<<<<< Updated upstream
 >>>>>>> master
+=======
+<<<<<<< Updated upstream
+=======
+=======
+    - _Color: {r: 0.28676468, g: 0.28676468, b: 0.28676468, a: 1}
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
