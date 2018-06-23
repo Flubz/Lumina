@@ -1,7 +1,5 @@
 fileFormatVersion: 2
 guid: 03647f39ab053c747a77c0b8aea7dc56
-timeCreated: 1529712532
-licenseType: Free
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
@@ -150,7 +148,9 @@ ModelImporter:
     400140: transform8
     400142: transform9
     2300000: polySurface20
+    2300002: //RootNode
     3300000: polySurface20
+    3300002: //RootNode
     4300000: polySurface20
     9500000: //RootNode
   materials:
