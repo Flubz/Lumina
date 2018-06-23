@@ -1,10 +1,43 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: d09e2f31f9242954398a87f38214a2e7
+=======
+<<<<<<< HEAD
+guid: a61aa7f56441b454d937384e061a1d8b
+timeCreated: 1529781615
+=======
+<<<<<<< HEAD
+guid: d09e2f31f9242954398a87f38214a2e7
+timeCreated: 1529782621
+=======
+guid: 137402e1156f10a468549b824967d3b5
+timeCreated: 1529782660
+>>>>>>> master
+>>>>>>> master
+licenseType: Free
+>>>>>>> master
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
     100000: Chamber
     100002: //RootNode
+<<<<<<< HEAD
+    100004: Hardware
+    100006: Hardware1
+    400000: Chamber
+    400002: //RootNode
+    400004: Hardware
+    400006: Hardware1
+    2300000: Chamber
+    2300002: Hardware
+    2300004: Hardware1
+    3300000: Chamber
+    3300002: Hardware
+    3300004: Hardware1
+    4300000: Chamber
+    4300002: Hardware
+    4300004: Hardware1
+=======
     100004: Hardware1
     400000: Chamber
     400002: //RootNode
@@ -15,7 +48,11 @@ ModelImporter:
     3300002: Hardware1
     4300000: Chamber
     4300002: Hardware1
+<<<<<<< HEAD
     9500000: //RootNode
+=======
+>>>>>>> master
+>>>>>>> master
   materials:
     importMaterials: 1
     materialName: 0
