@@ -30,6 +30,15 @@ public class PlatformMovement : MonoBehaviour
 		t.OnComplete (MoveLeft);
 	}
 
+	void OnCollisionEnter (Collision other)
+	{
+		Debug.Log ("ASD");
+		if (other.gameObject.CompareTag ("Player"))
+		{
+			_moveRadius = 0.01f * _moveRadius;
+		}
+	}
+
 	// void OnValidate ()
 	// {
 	// 	_movementAxis = DirectionToAxis (_movementDirection);
