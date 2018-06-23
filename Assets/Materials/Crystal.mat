@@ -76,7 +76,7 @@ Material:
     - _HazeNormalIntensity: 0.1
     - _HazeVSpeed: 0
     - _InvFade: 1
-    - _Metallic: 0.747
+    - _Metallic: 1
     - _Mode: 3
     - _OcclusionStrength: 1
     - _Parallax: 0.02
@@ -86,6 +86,6 @@ Material:
     - _UVSec: 0
     - _ZWrite: 0
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0.043, g: 0.043, b: 0.043, a: 1}
+    - _Color: {r: 0.7352941, g: 0.2973616, b: 0.2973616, a: 1}
+    - _EmissionColor: {r: 0.2205882, g: 0.022707606, b: 0.022707606, a: 1}
     - _TintColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
