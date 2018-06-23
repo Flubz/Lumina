@@ -63,8 +63,7 @@ public class PlayerMovement : MonoBehaviour
 
 		Vector3 telePos = transform.position + transform.forward * _maxDashDistance;
 
-		_orb.DOMoveX (telePos.x, _orbMoveSpeed).SetEase (_dashEase);
-		_orb.DOMoveZ (telePos.z, _orbMoveSpeed).SetEase (_dashEase);
+		_orb.DOMove (telePos, _orbMoveSpeed).SetEase (_dashEase);
 	}
 
 	void TeleportToOrb ()
