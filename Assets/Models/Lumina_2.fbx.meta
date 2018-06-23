@@ -1,13 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream:Assets/Models/Lumina_3.fbx.meta
-guid: f6224f3447c7a0c4391229be59972056
-timeCreated: 1529718841
-=======
-<<<<<<< Updated upstream:Assets/Models/Lumina_2.fbx.meta~Updated upstream
-guid: ed71933f3a9ab984389c7d59ae2dba47
-timeCreated: 1529716897
->>>>>>> Stashed changes:Assets/Models/Lumina_2.fbx.meta~Updated upstream
-licenseType: Free
+guid: 2a65d09fd46e2b14f97afaaec2b6242b
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
@@ -23,37 +15,9 @@ ModelImporter:
     3300002: polySurface87
     4300000: polySurface86
     4300002: polySurface87
-=======
-guid: a00d381159381aa4fb31e49a781e1f4d
-ModelImporter:
-  serializedVersion: 21
-  fileIDToRecycleName:
-    100000: pCube287_MeshPart0
-    100002: pCube287_MeshPart1
-    100004: pCube287_MeshPart2
-    100006: pCube287_MeshPart3
-    100008: //RootNode
-    400000: pCube287_MeshPart0
-    400002: pCube287_MeshPart1
-    400004: pCube287_MeshPart2
-    400006: pCube287_MeshPart3
-    400008: //RootNode
-    2300000: pCube287_MeshPart0
-    2300002: pCube287_MeshPart1
-    2300004: pCube287_MeshPart2
-    2300006: pCube287_MeshPart3
-    3300000: pCube287_MeshPart0
-    3300002: pCube287_MeshPart1
-    3300004: pCube287_MeshPart2
-    3300006: pCube287_MeshPart3
-    4300000: pCube287_MeshPart0
-    4300002: pCube287_MeshPart1
-    4300004: pCube287_MeshPart2
-    4300006: pCube287_MeshPart3
     9500000: //RootNode
->>>>>>> Stashed changes:Assets/Models/Test_Level3.fbx.meta
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
   animations:
@@ -76,22 +40,22 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-    importVisibility: 0
-    importBlendShapes: 0
-    importCameras: 0
-    importLights: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
-    weldVertices: 0
+    weldVertices: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
@@ -102,7 +66,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 0
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
