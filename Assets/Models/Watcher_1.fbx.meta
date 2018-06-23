@@ -1,12 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream
 guid: eb6fa057bfd033348a899734e23a23df
-timeCreated: 1529764917
-=======
-guid: 04330056424de1c4d9c6bfa7ab764268
-timeCreated: 1529761552
->>>>>>> Stashed changes
-licenseType: Free
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
@@ -15,12 +8,9 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: Watcher
+    9500000: //RootNode
   materials:
-<<<<<<< Updated upstream
     importMaterials: 1
-=======
-    importMaterials: 0
->>>>>>> Stashed changes
     materialName: 0
     materialSearch: 1
   animations:
@@ -43,37 +33,22 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-<<<<<<< Updated upstream
     isReadable: 1
-=======
-    isReadable: 0
->>>>>>> Stashed changes
   meshes:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-<<<<<<< Updated upstream
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
-=======
-    importVisibility: 0
-    importBlendShapes: 0
-    importCameras: 0
-    importLights: 0
->>>>>>> Stashed changes
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
-<<<<<<< Updated upstream
     weldVertices: 1
-=======
-    weldVertices: 0
->>>>>>> Stashed changes
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
@@ -84,11 +59,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-<<<<<<< Updated upstream
   importAnimation: 1
-=======
-  importAnimation: 0
->>>>>>> Stashed changes
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
@@ -107,7 +78,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
