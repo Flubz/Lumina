@@ -4548,8 +4548,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rb: {fileID: 991068511}
-  _moveSpeed: 12
-  _rotSpeed: 6
+  _moveSpeed: 16
+  _rotSpeed: 12
   _rotOffset: -45
 --- !u!1 &1060402635 stripped
 GameObject:
@@ -5102,7 +5102,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1648919741}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.76, z: -0.279}
+  m_LocalPosition: {x: 0, y: 0.668, z: -0.148}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 901064701}
@@ -5196,7 +5196,7 @@ TrailRenderer:
     numCapVertices: 0
     alignment: 0
     textureMode: 0
-    generateLightingData: 1
+    generateLightingData: 0
   m_MinVertexDistance: 0.01
   m_Autodestruct: 0
 --- !u!1 &1651523668 stripped
@@ -5484,7 +5484,7 @@ Light:
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
-  m_Range: 10
+  m_Range: 4
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
