@@ -23,6 +23,7 @@ public class EnemyAI : MonoBehaviour
 
 	[SerializeField] Light _lightA;
 	[SerializeField] Light _lightB;
+	[SerializeField] ParticleSystem _ps;
 
 	float _lightAIntensity;
 	float _lightBIntensity;
@@ -50,6 +51,7 @@ public class EnemyAI : MonoBehaviour
 
 		_lightA.DOIntensity (_lightAIntensity, 1.0f);
 		_lightB.DOIntensity (_lightBIntensity, 1.0f);
+		_ps.gameObject.SetActive (true);
 
 		StartCoroutine (UpdatePath ());
 	}
@@ -60,6 +62,7 @@ public class EnemyAI : MonoBehaviour
 		_rb.velocity = Vector3.zero;
 		_lightA.DOIntensity (0, 1.0f);
 		_lightB.DOIntensity (0, 1.0f);
+		_ps.gameObject.SetActive (false);
 	}
 
 	// IEnumerator SearchForPlayer ()

@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
 	float _timeUntilNextDash;
 
 	bool _shiftPressed;
+	Vector3 tempVec;
 
 	void Start ()
 	{
@@ -34,7 +35,8 @@ public class PlayerMovement : MonoBehaviour
 		if (GetRotationVector ().magnitude > 0.4f)
 		{
 			transform.RotateTowardsVector (GetRotationVector (), _rotSpeed, _rotOffset);
-			_rb.velocity = (transform.forward * _moveSpeed * Time.fixedDeltaTime);
+			tempVec = (transform.forward * _moveSpeed * Time.fixedDeltaTime);
+			_rb.velocity = new Vector3 (tempVec.x, _rb.velocity.y, tempVec.z);
 			if (_rb.velocity.magnitude >= _maxVelocity) _rb.velocity = _rb.velocity * _maxVelocity;
 		}
 	}
@@ -64,7 +66,6 @@ public class PlayerMovement : MonoBehaviour
 
 	void LaunchOrb ()
 	{
-		Debug.Log("ASD");
 		_orb.gameObject.SetActive (true);
 		_shiftPressed = true;
 		_orb.position = transform.position;
