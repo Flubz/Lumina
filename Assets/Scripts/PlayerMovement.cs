@@ -24,7 +24,9 @@ public class PlayerMovement : MonoBehaviour
 	bool _shiftPressed;
 	Vector3 tempVec;
 	[SerializeField] AudioSource _audioSource;
-	[SerializeField] float _audioFadeTime = 1.0f;
+	[SerializeField] float _audioFadeTimeStart = 1.0f;
+	[SerializeField] float _audioFadeTimeEnd = 1.0f;
+	[SerializeField] float _audioEffectMaxVolume = 0.2f;
 
 	void Start ()
 	{
@@ -37,14 +39,14 @@ public class PlayerMovement : MonoBehaviour
 		// if (_shiftPressed) return;
 		if (GetRotationVector ().magnitude > 0.4f)
 		{
-			if (_audioSource.volume == 0) _audioSource.DOFade (_rb.velocity.normalized.magnitude, _audioFadeTime);
+			if (_audioSource.volume == 0) _audioSource.DOFade (_audioEffectMaxVolume, _audioFadeTimeStart);
 			transform.RotateTowardsVector (GetRotationVector (), _rotSpeed, _rotOffset);
 			tempVec = (transform.forward * _moveSpeed * Time.fixedDeltaTime);
 			_rb.velocity = new Vector3 (tempVec.x, _rb.velocity.y, tempVec.z);
 			if (_rb.velocity.magnitude >= _maxVelocity) _rb.velocity = _rb.velocity * _maxVelocity;
 		}
 		else
-		if (_audioSource.volume != 0) _audioSource.DOFade (_rb.velocity.normalized.magnitude, _audioFadeTime);
+		if (_audioSource.volume != 0) _audioSource.DOFade (0.0f, _audioFadeTimeEnd);
 	}
 
 	Vector3 GetRotationVector ()
