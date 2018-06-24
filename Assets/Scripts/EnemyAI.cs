@@ -14,6 +14,7 @@ public class EnemyAI : MonoBehaviour
 	[SerializeField] float _nextWaypointDist = 3f;
 	[SerializeField] float _angleOffset = 45f;
 	[SerializeField] float _rotSpeed = 45f;
+	[SerializeField] AudioSource _audioSource;
 
 	Path _path;
 	Seeker _seeker;
@@ -22,7 +23,6 @@ public class EnemyAI : MonoBehaviour
 
 	[SerializeField] Light _lightA;
 	[SerializeField] Light _lightB;
-	[SerializeField] Transform _detector;
 
 	float _lightAIntensity;
 	float _lightBIntensity;
@@ -31,6 +31,7 @@ public class EnemyAI : MonoBehaviour
 
 	void Awake ()
 	{
+		_audioSource = GetComponent<AudioSource> ();
 		_seeker = GetComponent<Seeker> ();
 		_rb = GetComponent<Rigidbody> ();
 		_lightAIntensity = _lightA.intensity;
@@ -40,7 +41,9 @@ public class EnemyAI : MonoBehaviour
 
 	public void StartFollowingPlayer (Transform target_)
 	{
+		_audioSource.Play ();
 		_target = target_;
+
 		if (_target == null) return;
 
 		_seeker.StartPath (transform.position, _target.position, OnPathComplete);
@@ -81,6 +84,7 @@ public class EnemyAI : MonoBehaviour
 		if (_target != null)
 		{
 			_seeker.StartPath (transform.position, _target.position, OnPathComplete);
+
 			yield return new WaitForSeconds (_updateRate);
 			StartCoroutine (UpdatePath ());
 		}
@@ -113,10 +117,11 @@ public class EnemyAI : MonoBehaviour
 		_pathIsEnded = false;
 
 		Vector3 dir = (_path.vectorPath[_currentWaypoint] - transform.position).normalized;
-		dir.y = 0;
-		_rb.velocity = dir * _speed * Time.fixedDeltaTime;
 
-		float dist = Vector3.Distance (transform.forward, _path.vectorPath[_currentWaypoint]);
+		_rb.velocity = dir * _speed * Time.fixedDeltaTime;
+		transform.DOLookAt (_target.position, 1.0f);
+
+		float dist = Vector3.Distance (transform.position, _path.vectorPath[_currentWaypoint]);
 		if (dist < _nextWaypointDist)
 		{
 			_currentWaypoint++;

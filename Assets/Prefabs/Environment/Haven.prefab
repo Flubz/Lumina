@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4424739646741138}
   - component: {fileID: 95421196912771884}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Haven
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 4852011519592810}
   - component: {fileID: 33821479614626164}
   - component: {fileID: 23339893146656178}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hardware1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: 4194171349995730}
   - component: {fileID: 33937970320322834}
   - component: {fileID: 23528466954757624}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Chamber
   m_TagString: Untagged
   m_Icon: {fileID: 0}

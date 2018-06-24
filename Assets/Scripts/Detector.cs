@@ -6,8 +6,14 @@ public class Detector : MonoBehaviour
 {
 	[SerializeField] EnemyAI _enemyAI;
 
-	private void OnTriggerStay (Collider other)
+	private void OnTriggerEnter (Collider other)
 	{
+		StartCoroutine (StartTimer (other));
+	}
+
+	IEnumerator StartTimer (Collider other)
+	{
+		yield return new WaitForSeconds (0.1f);
 		if (other.gameObject.CompareTag ("Player"))
 		{
 			_enemyAI.StartFollowingPlayer (other.transform);
@@ -16,6 +22,12 @@ public class Detector : MonoBehaviour
 
 	private void OnTriggerExit (Collider other)
 	{
+		StartCoroutine (StopTimer ());
+	}
+
+	IEnumerator StopTimer ()
+	{
+		yield return new WaitForSeconds (1.0f);
 		_enemyAI.StopFollowingPlayer ();
 	}
 }
