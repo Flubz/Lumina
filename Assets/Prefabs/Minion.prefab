@@ -770,10 +770,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pathIsEnded: 0
   _updateRate: 0.1
-  _speed: 125
+  _speed: 100
   _nextWaypointDist: 1
-  _angleOffset: 45
-  _rotSpeed: 12
   _audioSource: {fileID: 82981435528462114}
   _lightA: {fileID: 108073795083928588}
   _lightB: {fileID: 108531174041636774}
