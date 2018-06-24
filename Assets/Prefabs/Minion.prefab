@@ -597,7 +597,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 2
-  m_Color: {r: 1, g: 0.5661765, b: 0.5661765, a: 1}
+  m_Color: {r: 0.71323526, g: 0, b: 0, a: 1}
   m_Intensity: 2.46
   m_Range: 1.8
   m_SpotAngle: 30
@@ -647,7 +647,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 0
-  m_Color: {r: 1, g: 0.6102941, b: 0.6102941, a: 1}
+  m_Color: {r: 1, g: 0.16176468, b: 0.16176468, a: 1}
   m_Intensity: 8
   m_Range: 3.027358
   m_SpotAngle: 100
@@ -739,7 +739,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pathIsEnded: 0
   _updateRate: 0.1
-  _speed: 100
+  _speed: 125
   _nextWaypointDist: 1
   _angleOffset: 45
   _rotSpeed: 12
