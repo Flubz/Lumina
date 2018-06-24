@@ -91,13 +91,11 @@ public class EnemyAI : MonoBehaviour
 		if (_target != null)
 		{
 			_seeker.StartPath (transform.position, _target.position, OnPathComplete);
-			
+
 			_distanceToTarget = (_target.position - transform.position).magnitude;
 
 			if (_distanceToTarget < _distanceWhenStartsDamaging)
 				_target.GetComponent<Player> ()._playerLight.LightLoss (_damageAmount);
-
-			Debug.Log (_distanceToTarget);
 
 			yield return new WaitForSeconds (_updateRate);
 			StartCoroutine (UpdatePath ());

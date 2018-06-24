@@ -21,7 +21,7 @@ public class ApplicationManager : MonoBehaviour
 	private void Start ()
 	{
 		// SceneManager.sceneLoaded += OnSceneLoaded;
-		AudioManager.instance.Play ("MainTheme");
+		AudioManager.instance.Play ("Ambience_1");
 	}
 
 }

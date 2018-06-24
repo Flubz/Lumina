@@ -10,6 +10,7 @@ public class Pickup : MonoBehaviour
 	[SerializeField] BoxCollider _boxCol;
 	[SerializeField] ParticleSystem _ps;
 	[SerializeField] Light _essenceLight;
+	[SerializeField] AudioSource _as;
 
 	private void OnTriggerEnter (Collider other)
 	{
@@ -25,6 +26,7 @@ public class Pickup : MonoBehaviour
 	{
 		_boxCol.enabled = false;
 		_ps.Play ();
+		_as.Play ();
 		transform.DOScale (Vector3.zero, _ps.main.duration + 0.2f).OnComplete (DeleteGO);
 		_essenceLight.DOIntensity (0, 1.0f);
 	}
