@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-
 	public PlayerLight _playerLight;
 	[SerializeField] float _lightDiminishRate = 1.0f;
 	[SerializeField] Light _spotLight;
@@ -27,7 +26,7 @@ public class Player : MonoBehaviour
 
 	void DeathEvent ()
 	{
-		Debug.Log("Out of Light");
+		Debug.Log ("Out of Light");
 	}
 
 }
