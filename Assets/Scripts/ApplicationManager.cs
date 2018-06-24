@@ -25,7 +25,7 @@ public class ApplicationManager : MonoBehaviour
 	private void Start ()
 	{
 		SceneManager.sceneLoaded += OnSceneLoaded;
-		AudioManager.instance.Play ("Ambience_1");
+		AudioManager.instance.Play ("Melody");
 		_gameStarted = false;
 	}
 
