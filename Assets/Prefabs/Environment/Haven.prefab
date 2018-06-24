@@ -54,6 +54,7 @@ GameObject:
   - component: {fileID: 4194171349995730}
   - component: {fileID: 33937970320322834}
   - component: {fileID: 23528466954757624}
+  - component: {fileID: 64533279197283378}
   m_Layer: 8
   m_Name: Chamber
   m_TagString: Untagged
@@ -181,6 +182,20 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1875884003400050}
+  m_Mesh: {fileID: 4300000, guid: d09e2f31f9242954398a87f38214a2e7, type: 3}
+--- !u!64 &64533279197283378
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1875884003400050}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: d09e2f31f9242954398a87f38214a2e7, type: 3}
 --- !u!95 &95421196912771884
 Animator:
