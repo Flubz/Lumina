@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4918161464401976}
   - component: {fileID: 33045890502539008}
   - component: {fileID: 23050391023485668}
-  - component: {fileID: 95371661461802422}
   - component: {fileID: 108690618934185614}
   m_Layer: 0
   m_Name: TheWatcher
@@ -82,23 +81,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1306306866305284}
   m_Mesh: {fileID: 4300000, guid: eb6fa057bfd033348a899734e23a23df, type: 3}
---- !u!95 &95371661461802422
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1306306866305284}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: eb6fa057bfd033348a899734e23a23df, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!108 &108690618934185614
 Light:
   m_ObjectHideFlags: 1

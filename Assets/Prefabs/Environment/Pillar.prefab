@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4502843544525812}
   - component: {fileID: 33136849241851434}
   - component: {fileID: 23771879405661884}
-  - component: {fileID: 95039358796110596}
   - component: {fileID: 65031539359943864}
   m_Layer: 0
   m_Name: Pillar
@@ -94,20 +93,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.65816134, y: 3.2504635, z: 0.65816134}
   m_Center: {x: -0.32683316, y: 1.6252317, z: 0.32683316}
---- !u!95 &95039358796110596
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1379522643260744}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 13e81ffcc76e1404a9365775084d18f7, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1

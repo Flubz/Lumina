@@ -15,4 +15,14 @@ public static class ExtensionMethods
 		return list_[UnityEngine.Random.Range (0, list_.Count)];
 	}
 
+	public static T FindComponent<T> (this GameObject go_)
+	{
+		if (go_.GetComponent<T> () != null) return go_.GetComponent<T> ();
+		else
+		{
+			Debug.LogError ("Compoenent of Type " + typeof (T).GetType ().ToString () + " not found! ");
+			return default (T);
+		}
+	}
+
 }

@@ -90,12 +90,12 @@ GameObject:
   - component: {fileID: 33063649682499360}
   - component: {fileID: 23416802952376308}
   m_Layer: 0
-  m_Name: LightSize
+  m_Name: LightOrb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1570718438041438
 GameObject:
   m_ObjectHideFlags: 1
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 4266147527714696}
   - component: {fileID: 108667672633346228}
   m_Layer: 0
-  m_Name: Point light
+  m_Name: SpotLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -142,6 +142,8 @@ GameObject:
   - component: {fileID: 33292831239657344}
   - component: {fileID: 23886614859785180}
   - component: {fileID: 135513225029486784}
+  - component: {fileID: 114463817263759896}
+  - component: {fileID: 114475883929051910}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -156,7 +158,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1200145491646294}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.04, y: 0.29, z: 11.38}
+  m_LocalPosition: {x: 24.42, y: 3.46, z: 4.61}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4131353518769522}
@@ -593,9 +595,9 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.7
+  m_Intensity: 1.4
   m_Range: 14
-  m_SpotAngle: 115
+  m_SpotAngle: 90
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
@@ -646,6 +648,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 4131353518769522}
   _damping: 5
+--- !u!114 &114463817263759896
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1926012761728828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c803840592d1184496d5ba7917eb581, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerLight: {fileID: 114475883929051910}
+  _lightDiminishRate: 1
+  _spotLight: {fileID: 108667672633346228}
+--- !u!114 &114475883929051910
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1926012761728828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12722dcd1aac576409dfca0cb797f9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _initialLight: 90
+  _maxLight: 180
+  _debug: 0
+  _invincible: 1
 --- !u!114 &114593238003281226
 MonoBehaviour:
   m_ObjectHideFlags: 1

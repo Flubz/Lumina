@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField] float _dashRate = 2.0f;
 	float _timeUntilNextDash;
 
-	bool _movementLocked;
+	bool _shiftPressed;
 
 	void Start ()
 	{
@@ -30,11 +30,11 @@ public class PlayerMovement : MonoBehaviour
 
 	private void FixedUpdate ()
 	{
-		// if (_movementLocked) return;
+		// if (_shiftPressed) return;
 		if (GetRotationVector ().magnitude > 0.4f)
 		{
 			transform.RotateTowardsVector (GetRotationVector (), _rotSpeed, _rotOffset);
-			_rb.velocity = (transform.forward * _moveSpeed * Time.fixedDeltaTime) + (_rb.velocity / 100);
+			_rb.velocity = (transform.forward * _moveSpeed * Time.fixedDeltaTime);
 			if (_rb.velocity.magnitude >= _maxVelocity) _rb.velocity = _rb.velocity * _maxVelocity;
 		}
 	}
@@ -66,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
 	{
 		Debug.Log("ASD");
 		_orb.gameObject.SetActive (true);
-		_movementLocked = true;
+		_shiftPressed = true;
 		_orb.position = transform.position;
 
 		Vector3 telePos = transform.position + transform.forward * _maxDashDistance;
@@ -84,7 +84,7 @@ public class PlayerMovement : MonoBehaviour
 	{
 		transform.position = _orb.position;
 
-		_movementLocked = false;
+		_shiftPressed = false;
 		_orb.gameObject.SetActive (false);
 	}
 
