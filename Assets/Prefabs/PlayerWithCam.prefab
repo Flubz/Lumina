@@ -873,7 +873,9 @@ MonoBehaviour:
   _dashEase: 14
   _dashRate: 2
   _audioSource: {fileID: 82642328436001272}
-  _audioFadeTime: 0.8
+  _audioFadeTimeStart: 0.4
+  _audioFadeTimeEnd: 0.1
+  _audioEffectMaxVolume: 0.2
 --- !u!114 &114998934426591622
 MonoBehaviour:
   m_ObjectHideFlags: 1
