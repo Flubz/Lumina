@@ -21,8 +21,8 @@ GameObject:
   - component: {fileID: 4924063218528446}
   - component: {fileID: 33260798619842508}
   - component: {fileID: 23151099874843760}
-  - component: {fileID: 64267049641225744}
-  m_Layer: 0
+  - component: {fileID: 65826735817255236}
+  m_Layer: 9
   m_Name: Floor_Main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81,8 +81,8 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1013231278800388}
   m_Mesh: {fileID: 4300000, guid: e807d98451e0dc64f80805cb79c777a0, type: 3}
---- !u!64 &64267049641225744
-MeshCollider:
+--- !u!65 &65826735817255236
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -91,7 +91,5 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 1
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300004, guid: bbc9c3938eb1229418014899784fdd51, type: 3}
+  m_Size: {x: 4, y: 0.23503426, z: 4}
+  m_Center: {x: -1.9741333, y: 0.01751709, z: 2}

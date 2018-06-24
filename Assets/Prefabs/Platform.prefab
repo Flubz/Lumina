@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23318226092909718}
   - component: {fileID: 65156249395818310}
   - component: {fileID: 114370223164520628}
+  - component: {fileID: 65106101817529452}
   m_Layer: 0
   m_Name: Platform
   m_TagString: Untagged
@@ -37,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1225010967471542}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.91, y: 0, z: 0}
+  m_LocalPosition: {x: 13.43, y: -0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -82,6 +83,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1225010967471542}
   m_Mesh: {fileID: 4300002, guid: 168d229b4eedf974e8e4e708974f6fa5, type: 3}
+--- !u!65 &65106101817529452
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1225010967471542}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.5950227, y: 0.41588646, z: 1.9959326}
+  m_Center: {x: -0.00000029802322, y: 0.79, z: -0.00037643313}
 --- !u!65 &65156249395818310
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -105,5 +118,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bca6c740f3cec404b90d79a15a378816, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveRadius: 3
+  _moveRadius: 1
   _moveDuration: 3
