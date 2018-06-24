@@ -10,7 +10,7 @@ public class ApplicationManager : MonoBehaviour
 {
 	public static ApplicationManager instance = null;
 	[HideInInspector] public bool _gameStarted;
-	[SerializeField] CanvasGroup _cg;
+	[SerializeField] Canvas _canvas;
 
 	void Awake ()
 	{
@@ -26,28 +26,31 @@ public class ApplicationManager : MonoBehaviour
 	{
 		SceneManager.sceneLoaded += OnSceneLoaded;
 		AudioManager.instance.Play ("Melody");
-		_gameStarted = false;
+		OnGameStart ();
 	}
 
-	void StartSettings ()
+	void OnGameStart ()
 	{
-
+		_gameStarted = false;
+		_canvas.gameObject.SetActive (true);
+		Time.timeScale = 0.0f;
 	}
 
 	void OnSceneLoaded (Scene scene, LoadSceneMode mode)
 	{
-		StartSettings ();
+		OnGameStart ();
 	}
 
-	private void Update ()
+	public void StartGame ()
 	{
-		if (!_gameStarted)
-		{
-			if (Input.GetButtonDown ("Jump"))
-			{
-				
-			}
-		}
+		_gameStarted = true;
+		_canvas.gameObject.SetActive (false);
+		Time.timeScale = 1.0f;
+	}
+
+	public void ReloadScene ()
+	{
+		SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
 	}
 
 }
