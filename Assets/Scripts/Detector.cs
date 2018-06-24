@@ -8,6 +8,7 @@ public class Detector : MonoBehaviour
 
 	private void OnTriggerEnter (Collider other)
 	{
+		StopAllCoroutines ();
 		StartCoroutine (StartTimer (other));
 	}
 
@@ -22,6 +23,7 @@ public class Detector : MonoBehaviour
 
 	private void OnTriggerExit (Collider other)
 	{
+		StopAllCoroutines ();
 		StartCoroutine (StopTimer ());
 	}
 
@@ -29,5 +31,6 @@ public class Detector : MonoBehaviour
 	{
 		yield return new WaitForSeconds (1.0f);
 		_enemyAI.StopFollowingPlayer ();
+
 	}
 }
