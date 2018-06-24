@@ -29,6 +29,10 @@ public class EnemyAI : MonoBehaviour
 	float _lightBIntensity;
 
 	int _currentWaypoint = 0;
+	float _distanceToTarget;
+
+	[SerializeField] float _distanceWhenStartsDamaging = 13.0f;
+	[SerializeField] float _damageAmount = 1.0f;
 
 	void Awake ()
 	{
@@ -87,6 +91,13 @@ public class EnemyAI : MonoBehaviour
 		if (_target != null)
 		{
 			_seeker.StartPath (transform.position, _target.position, OnPathComplete);
+			
+			_distanceToTarget = (_target.position - transform.position).magnitude;
+
+			if (_distanceToTarget < _distanceWhenStartsDamaging)
+				_target.GetComponent<Player> ()._playerLight.LightLoss (_damageAmount);
+
+			Debug.Log (_distanceToTarget);
 
 			yield return new WaitForSeconds (_updateRate);
 			StartCoroutine (UpdatePath ());

@@ -778,6 +778,8 @@ MonoBehaviour:
   _lightA: {fileID: 108073795083928588}
   _lightB: {fileID: 108531174041636774}
   _ps: {fileID: 198200617541295216}
+  _distanceWhenStartsDamaging: 3.5
+  _damageAmount: 1
 --- !u!135 &135008085800415374
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -849,7 +851,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1370651759
+  randomSeed: -1673778494
   InitialModule:
     serializedVersion: 3
     enabled: 1
