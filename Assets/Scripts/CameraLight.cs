@@ -17,11 +17,6 @@ public class CameraLight : MonoBehaviour
 	[SerializeField] float _lightLossAmount = 1.0f;
 	[SerializeField] float _lightLossConstant = 1.0f;
 
-	// Use this for initialization
-	void Start ()
-	{
-
-	}
 
 	// Update is called once per frame
 	void Update ()

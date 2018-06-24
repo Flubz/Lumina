@@ -12,8 +12,6 @@ public class EnemyAI : MonoBehaviour
 	[SerializeField] float _updateRate = 2f;
 	[SerializeField] float _speed = 4f;
 	[SerializeField] float _nextWaypointDist = 3f;
-	[SerializeField] float _angleOffset = 45f;
-	[SerializeField] float _rotSpeed = 45f;
 	[SerializeField] AudioSource _audioSource;
 
 	Path _path;

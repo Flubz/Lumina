@@ -479,7 +479,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 82f83383f47cee9488390d8bf97685ff, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.062
   m_Pitch: 0.5
   Loop: 1
@@ -875,7 +875,7 @@ MonoBehaviour:
   _audioSource: {fileID: 82642328436001272}
   _audioFadeTimeStart: 0.4
   _audioFadeTimeEnd: 0.1
-  _audioEffectMaxVolume: 0.2
+  _audioEffectMaxVolume: 0.05
 --- !u!114 &114998934426591622
 MonoBehaviour:
   m_ObjectHideFlags: 1

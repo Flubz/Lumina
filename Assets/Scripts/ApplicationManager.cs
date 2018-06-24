@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using DG.Tweening;
+using UnityEngine;
 using UnityEngine.EventSystems;
-// using UnityEngine.SceneManagement;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 // Singleton that manages the application. Primarily for scene management.
@@ -8,6 +9,9 @@ using UnityEngine.UI;
 public class ApplicationManager : MonoBehaviour
 {
 	public static ApplicationManager instance = null;
+	[HideInInspector] public bool _gameStarted;
+	[SerializeField] CanvasGroup _canvas;
+
 	void Awake ()
 	{
 		if (instance == null)
@@ -20,8 +24,21 @@ public class ApplicationManager : MonoBehaviour
 
 	private void Start ()
 	{
-		// SceneManager.sceneLoaded += OnSceneLoaded;
+		SceneManager.sceneLoaded += OnSceneLoaded;
 		AudioManager.instance.Play ("Ambience_1");
+	}
+
+	void OnSceneLoaded (Scene scene, LoadSceneMode mode)
+	{
+		_gameStarted = false;
+		FindObjectOfType<PlayerLight> ()._Invincible = true;
+		_canvas.
+	}
+
+	public void OnGameStarted (PlayerMovement pm_)
+	{
+		_gameStarted = true;
+		pm_._pl._Invincible = false;
 	}
 
 }

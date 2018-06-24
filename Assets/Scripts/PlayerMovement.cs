@@ -23,10 +23,13 @@ public class PlayerMovement : MonoBehaviour
 
 	bool _shiftPressed;
 	Vector3 tempVec;
+
+	[Header ("Audio Settings")]
 	[SerializeField] AudioSource _audioSource;
 	[SerializeField] float _audioFadeTimeStart = 1.0f;
 	[SerializeField] float _audioFadeTimeEnd = 1.0f;
 	[SerializeField] float _audioEffectMaxVolume = 0.2f;
+	public PlayerLight _pl;
 
 	void Start ()
 	{
@@ -45,12 +48,12 @@ public class PlayerMovement : MonoBehaviour
 			_rb.velocity = new Vector3 (tempVec.x, _rb.velocity.y, tempVec.z);
 			if (_rb.velocity.magnitude >= _maxVelocity) _rb.velocity = _rb.velocity * _maxVelocity;
 		}
-		else
-		if (_audioSource.volume != 0) _audioSource.DOFade (0.0f, _audioFadeTimeEnd);
+		else if (_audioSource.volume != 0) _audioSource.DOFade (0.0f, _audioFadeTimeEnd);
 	}
 
-	Vector3 GetRotationVector ()
+	public Vector3 GetRotationVector ()
 	{
+		if (ApplicationManager.instance._gameStarted == false) ApplicationManager.instance.OnGameStarted (this);
 		return new Vector3 (Input.GetAxisRaw ("Horizontal"), Input.GetAxisRaw ("Vertical"), 0);
 	}
 
