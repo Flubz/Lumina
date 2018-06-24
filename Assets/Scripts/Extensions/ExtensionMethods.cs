@@ -15,6 +15,36 @@ public static class ExtensionMethods
 		return list_[UnityEngine.Random.Range (0, list_.Count)];
 	}
 
+	public static IEnumerator FadeInCG (this CanvasGroup cg_, float fadeDuration_ = 0.2f, bool unscaled_ = false)
+	{
+		float t = 0f;
+
+		while (t < fadeDuration_)
+		{
+			if (unscaled_)
+				t += Time.unscaledDeltaTime;
+			else
+				t += Time.deltaTime;
+
+			cg_.alpha = t / fadeDuration_;
+			yield return 0;
+		}
+	}
+
+	public static IEnumerator FadeOutCG (this CanvasGroup cg_, float fadeDuration_ = 0.2f, bool unscaled_ = false)
+	{
+		while (fadeDuration_ > 0f)
+		{
+			if (unscaled_)
+				fadeDuration_ -= Time.unscaledDeltaTime;
+			else
+				fadeDuration_ -= Time.deltaTime;
+
+			cg_.alpha = fadeDuration_;
+			yield return 0;
+		}
+	}
+
 	public static T FindComponent<T> (this GameObject go_)
 	{
 		if (go_.GetComponent<T> () != null) return go_.GetComponent<T> ();

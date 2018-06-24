@@ -24,7 +24,6 @@ public class CameraLight : MonoBehaviour
 		// Debug.Log(_mouseState);
 		if (Input.GetMouseButtonDown (0))
 		{
-
 			RaycastHit hitInfo;
 			target = GetClickedObject (out hitInfo);
 			if (target != null)

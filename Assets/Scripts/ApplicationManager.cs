@@ -10,7 +10,7 @@ public class ApplicationManager : MonoBehaviour
 {
 	public static ApplicationManager instance = null;
 	[HideInInspector] public bool _gameStarted;
-	[SerializeField] CanvasGroup _canvas;
+	[SerializeField] CanvasGroup _cg;
 
 	void Awake ()
 	{
@@ -26,19 +26,28 @@ public class ApplicationManager : MonoBehaviour
 	{
 		SceneManager.sceneLoaded += OnSceneLoaded;
 		AudioManager.instance.Play ("Ambience_1");
+		_gameStarted = false;
+	}
+
+	void StartSettings ()
+	{
+
 	}
 
 	void OnSceneLoaded (Scene scene, LoadSceneMode mode)
 	{
-		_gameStarted = false;
-		FindObjectOfType<PlayerLight> ()._Invincible = true;
-		_canvas.
+		StartSettings ();
 	}
 
-	public void OnGameStarted (PlayerMovement pm_)
+	private void Update ()
 	{
-		_gameStarted = true;
-		pm_._pl._Invincible = false;
+		if (!_gameStarted)
+		{
+			if (Input.GetButtonDown ("Jump"))
+			{
+				
+			}
+		}
 	}
 
 }

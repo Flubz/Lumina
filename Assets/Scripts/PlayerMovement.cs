@@ -53,7 +53,6 @@ public class PlayerMovement : MonoBehaviour
 
 	public Vector3 GetRotationVector ()
 	{
-		if (ApplicationManager.instance._gameStarted == false) ApplicationManager.instance.OnGameStarted (this);
 		return new Vector3 (Input.GetAxisRaw ("Horizontal"), Input.GetAxisRaw ("Vertical"), 0);
 	}
 
