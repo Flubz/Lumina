@@ -17,13 +17,13 @@ public class CameraLight : MonoBehaviour
 	[SerializeField] float _lightLossAmount = 1.0f;
 	[SerializeField] float _lightLossConstant = 1.0f;
 
-
 	// Update is called once per frame
 	void Update ()
 	{
 		// Debug.Log(_mouseState);
 		if (Input.GetMouseButtonDown (0))
 		{
+			if (ApplicationManager.instance._gameStarted == false) ApplicationManager.instance.StartGame ();
 			RaycastHit hitInfo;
 			target = GetClickedObject (out hitInfo);
 			if (target != null)

@@ -42,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
 		// if (_shiftPressed) return;
 		if (GetRotationVector ().magnitude > 0.4f)
 		{
+			if (ApplicationManager.instance._gameStarted == false) ApplicationManager.instance.StartGame ();
 			if (_audioSource.volume == 0) _audioSource.DOFade (_audioEffectMaxVolume, _audioFadeTimeStart);
 			transform.RotateTowardsVector (GetRotationVector (), _rotSpeed, _rotOffset);
 			tempVec = (transform.forward * _moveSpeed * Time.fixedDeltaTime);

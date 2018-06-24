@@ -26,7 +26,9 @@ public class Player : MonoBehaviour
 
 	void DeathEvent ()
 	{
-		Debug.Log ("Out of Light");
+		ApplicationManager.instance.ReloadScene();
 	}
+	
+	
 
 }
