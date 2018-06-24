@@ -3,8 +3,6 @@ using DG.Tweening;
 using Pathfinding;
 using UnityEngine;
 
-// Some more brackeys https://www.youtube.com/watch?v=4T7KHysRw84
-// Most of the script is the same.
 [RequireComponent (typeof (Rigidbody))]
 [RequireComponent (typeof (Seeker))]
 public class EnemyAI : MonoBehaviour
@@ -24,6 +22,7 @@ public class EnemyAI : MonoBehaviour
 
 	[SerializeField] Light _lightA;
 	[SerializeField] Light _lightB;
+	[SerializeField] Transform _detector;
 
 	float _lightAIntensity;
 	float _lightBIntensity;
@@ -45,18 +44,19 @@ public class EnemyAI : MonoBehaviour
 		if (_target == null) return;
 
 		_seeker.StartPath (transform.position, _target.position, OnPathComplete);
+
 		_lightA.DOIntensity (_lightAIntensity, 1.0f);
 		_lightB.DOIntensity (_lightBIntensity, 1.0f);
+
 		StartCoroutine (UpdatePath ());
 	}
 
 	public void StopFollowingPlayer ()
 	{
 		_target = null;
+		_rb.velocity = Vector3.zero;
 		_lightA.DOIntensity (0, 1.0f);
 		_lightB.DOIntensity (0, 1.0f);
-
-		StopAllCoroutines ();
 	}
 
 	// IEnumerator SearchForPlayer ()
@@ -81,7 +81,7 @@ public class EnemyAI : MonoBehaviour
 		if (_target != null)
 		{
 			_seeker.StartPath (transform.position, _target.position, OnPathComplete);
-			yield return new WaitForSeconds (1f / _updateRate);
+			yield return new WaitForSeconds (_updateRate);
 			StartCoroutine (UpdatePath ());
 		}
 	}
@@ -113,10 +113,10 @@ public class EnemyAI : MonoBehaviour
 		_pathIsEnded = false;
 
 		Vector3 dir = (_path.vectorPath[_currentWaypoint] - transform.position).normalized;
-		transform.RotateTowardsVector (dir, _rotSpeed, _angleOffset);
-		_rb.velocity = transform.forward * _speed * Time.fixedDeltaTime;
+		dir.y = 0;
+		_rb.velocity = dir * _speed * Time.fixedDeltaTime;
 
-		float dist = Vector3.Distance (transform.position, _path.vectorPath[_currentWaypoint]);
+		float dist = Vector3.Distance (transform.forward, _path.vectorPath[_currentWaypoint]);
 		if (dist < _nextWaypointDist)
 		{
 			_currentWaypoint++;

@@ -6,7 +6,7 @@ public class Detector : MonoBehaviour
 {
 	[SerializeField] EnemyAI _enemyAI;
 
-	private void OnTriggerEnter (Collider other)
+	private void OnTriggerStay (Collider other)
 	{
 		if (other.gameObject.CompareTag ("Player"))
 		{
